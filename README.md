@@ -49,10 +49,6 @@ The bond-aware GINE model achieved the strongest overall performance on the held
 
 ![Scaffold prediction results](figures/scaffold_predictions.png)
 
-### Validation Performance
-
-![Validation curves](figures/validation_curves.png)
-
 ## Key Findings
 
 - Scaffold-based evaluation was more challenging than random splitting, highlighting the difficulty of generalizing to structurally distinct molecules.
