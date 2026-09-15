@@ -2,7 +2,7 @@
 
 A molecular machine learning project for predicting aqueous solubility (**logS**) from molecular graphs using Graph Neural Networks.
 
-The project compares **GCN**, **GAT**, and a **bond-aware GINE** model on the ESOL dataset, with emphasis on molecular generalization through **Bemis–Murcko scaffold splitting**, GPU-accelerated training, and reproducible evaluation.
+The project compares **GCN**, **GAT**, and a **bond-aware GINE** model on the ESOL dataset, with emphasis on molecular generalization through **Bemis-Murcko scaffold splitting**, GPU-accelerated training, and reproducible evaluation.
 
 ## Research Question
 
@@ -10,9 +10,9 @@ How well do different graph neural network architectures generalize to structura
 
 ## Models
 
-- **GCN** — graph convolutional baseline
-- **GAT** — attention-based graph neural network
-- **Bond-Aware GINE** — learned atom and bond embeddings with edge-aware message passing
+- **GCN**: graph convolutional baseline
+- **GAT**: attention-based graph neural network
+- **Bond-Aware GINE**: learned atom and bond embeddings with edge-aware message passing
 
 ## Dataset
 
@@ -33,7 +33,7 @@ How well do different graph neural network architectures generalize to structura
 | GCN | 0.8744 | 0.6602 | 0.8178 |
 | GAT | 0.9065 | 0.6796 | 0.8042 |
 
-### Bemis–Murcko Scaffold Split
+### Bemis-Murcko Scaffold Split
 
 The scaffold split prevents molecular scaffolds from overlapping across training, validation, and test sets, providing a more challenging evaluation of structural generalization.
 
@@ -44,6 +44,14 @@ The scaffold split prevents molecular scaffolds from overlapping across training
 | **Bond-Aware GINE** | **1.1646** | **1.1362** | **0.8917** | **0.6786** |
 
 The bond-aware GINE model achieved the strongest overall performance on the held-out scaffold test set.
+
+### Scaffold-Split Predictions
+
+![Scaffold prediction results](figures/scaffold_predictions.png)
+
+### Validation Performance
+
+![Validation curves](figures/validation_curves.png)
 
 ## Key Findings
 
@@ -68,7 +76,7 @@ The training pipeline includes:
 
 The project includes a standalone training pipeline and a **SLURM job-array configuration** for reproducible execution on HPC systems.
 
-The SLURM configuration is provided as an HPC-ready template for deployment on a compatible cluster.
+The SLURM configuration is provided as an **HPC-ready template for deployment on a compatible cluster**.
 
 Example:
 
@@ -135,7 +143,6 @@ Molecular_GNN_ESOL_Project/
 │   └── train_models.slurm
 │
 ├── requirements.txt
-├── .gitignore
 └── README.md
 ```
 
@@ -149,4 +156,4 @@ Python · PyTorch · PyTorch Geometric · RDKit · CUDA · scikit-learn · Panda
 - Multiple-seed experiments for uncertainty estimation
 - Hyperparameter optimization
 - Deeper molecular GNN architectures
-- Large-scale execution on an HPC cluster 
+- Large-scale execution on an HPC cluster
