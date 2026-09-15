@@ -1,0 +1,56 @@
+{
+    "project": "Molecular Property Prediction using Graph Neural Networks",
+    "dataset": "ESOL",
+    "target": "Aqueous solubility (logS)",
+    "dataset_size": 1128,
+    "scaffold_split": {
+        "train": 902,
+        "validation": 113,
+        "test": 113
+    },
+    "models": [
+        "GCN",
+        "GAT",
+        "Bond-Aware GINE"
+    ],
+    "training": {
+        "seed": 42,
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "max_epochs": 300,
+        "patience": 40,
+        "optimizer": "Adam",
+        "loss": "MSE"
+    },
+    "best_validation": {
+        "GCN": {
+            "epoch": 90,
+            "rmse": 1.3672124508824712
+        },
+        "GAT": {
+            "epoch": 88,
+            "rmse": 1.1908475530207765
+        },
+        "GINE": {
+            "epoch": 73,
+            "rmse": 1.1645764057463217
+        }
+    },
+    "scaffold_test": {
+        "GCN": {
+            "rmse": 1.2511974321387787,
+            "mae": 0.950035035610199,
+            "r2": 0.6102515459060669
+        },
+        "GAT": {
+            "rmse": 1.2348535793009294,
+            "mae": 0.9745111465454102,
+            "r2": 0.6203672885894775
+        },
+        "Bond-Aware GINE": {
+            "rmse": 1.1361888161480649,
+            "mae": 0.8916734457015991,
+            "r2": 0.6786090135574341
+        }
+    }
+}
