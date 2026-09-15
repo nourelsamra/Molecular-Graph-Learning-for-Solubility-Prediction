@@ -68,7 +68,7 @@ The training pipeline includes:
 
 The project includes a standalone training pipeline and a **SLURM job-array configuration** for reproducible execution on HPC systems.
 
-The SLURM configuration is provided as an **HPC-ready template** and has not been claimed as executed on a specific cluster.
+The SLURM configuration is provided as an HPC-ready template for deployment on a compatible cluster.
 
 Example:
 
